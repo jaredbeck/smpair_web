@@ -1,17 +1,35 @@
 import React from 'react';
 
 class AddPlayerForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.clear();
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    const input = event.target;
+    this.setState({[input.name]: input.value.trim()});
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const player = {
-      name: this.refs.name.value.trim(),
-      id: this.refs.id.value.trim(),
-      rating: this.refs.rating.value.trim()
+      name: this.state.name,
+      id: this.state.id,
+      rating: this.state.rating
     };
     this.props.onAddPlayer(player);
-    this.refs.name.value = '';
-    this.refs.id.value = '';
-    this.refs.rating.value = '';
+    this.clear();
+  }
+
+  clear() {
+    this.state = {
+      name: '',
+      id: '',
+      rating: ''
+    }
   }
 
   render() {
@@ -24,7 +42,14 @@ class AddPlayerForm extends React.Component {
               <div className="col-md-12">
                 <div className="form-group">
                   <label>Name</label>
-                  <input className="form-control" ref="name" required type="text" />
+                  <input
+                    className="form-control"
+                    name="name"
+                    required
+                    onChange={this.handleChange}
+                    type="text"
+                    value={this.state.name}
+                  />
                 </div>
               </div>
             </div>
@@ -32,13 +57,27 @@ class AddPlayerForm extends React.Component {
               <div className="col-md-6">
                 <div className="form-group">
                   <label>ID</label>
-                  <input className="form-control" ref="id" required type="text" />
+                  <input
+                    className="form-control"
+                    name="id"
+                    required
+                    onChange={this.handleChange}
+                    type="text"
+                    value={this.state.id}
+                  />
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="form-group">
                   <label>Rating</label>
-                  <input className="form-control" ref="rating" required type="text" />
+                  <input
+                    className="form-control"
+                    name="rating"
+                    required
+                    onChange={this.handleChange}
+                    type="text"
+                    value={this.state.rating}
+                  />
                 </div>
               </div>
             </div>

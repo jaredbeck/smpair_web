@@ -15,6 +15,7 @@ class PlayerList extends React.Component {
         {id: "12443", name: "Andrew, Son of Jack", rating: "4.5"}
       ]
     };
+    this.handleAddPlayer = this.handleAddPlayer.bind(this);
   }
 
   handleAddPlayer(player) {
