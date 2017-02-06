@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 
-var AppFooter = React.createClass({
-  render: function() {
+class AppFooter extends React.Component {
+  render() {
     return (
       <div className="app-footer">
         <div className="container-fluid">
@@ -21,6 +21,6 @@ var AppFooter = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default AppFooter

@@ -1,7 +1,7 @@
 import React from 'react';
 
-var AddPlayerForm = React.createClass({
-  handleSubmit: function(e) {
+class AddPlayerForm extends React.Component {
+  handleSubmit(e) {
     e.preventDefault();
     const player = {
       name: this.refs.name.value.trim(),
@@ -12,8 +12,9 @@ var AddPlayerForm = React.createClass({
     this.refs.name.value = '';
     this.refs.id.value = '';
     this.refs.rating.value = '';
-  },
-  render: function() {
+  }
+
+  render() {
     return (
       <div className="panel panel-default">
         <div className="panel-heading">Add Player</div>
@@ -47,6 +48,6 @@ var AddPlayerForm = React.createClass({
       </div>
     )
   }
-});
+}
 
 export default AddPlayerForm;

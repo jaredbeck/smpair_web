@@ -1,7 +1,7 @@
 import React from 'react';
 
-var PlayerListItem = React.createClass({
-  render: function() {
+class PlayerListItem extends React.Component {
+  render() {
     return (
       <tr>
         <td>{this.props.id}</td>
@@ -10,6 +10,6 @@ var PlayerListItem = React.createClass({
       </tr>
     );
   }
-});
+}
 
 export default PlayerListItem

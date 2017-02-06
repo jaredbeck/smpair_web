@@ -2,21 +2,27 @@ import React from 'react';
 import PlayerListItem from './PlayerListItem';
 import AddPlayerForm from './AddPlayerForm';
 
-var PlayerList = React.createClass({
-  getInitialState: function() {
-    return {
+class PlayerList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       players: [
-        {id: "12011", name: "Steve Colburn", rating: "-5.2"},
+        {id: "81", name: "Keith Arnold", rating: "4.4"},
         {id: "12212", name: "Jared Beck", rating: "3.4"},
+        {id: "12011", name: "Steve Colburn", rating: "-5.2"},
+        {id: "13614", name: "Samantha Fede", rating: "-5.0"},
+        {id: "14837", name: "Lisa Scott", rating: "-2.3"},
         {id: "12443", name: "Andrew, Son of Jack", rating: "4.5"}
       ]
     };
-  },
-  handleAddPlayer: function(player) {
+  }
+
+  handleAddPlayer(player) {
     const newPlayers = this.state.players.concat(player);
     this.setState({players: newPlayers});
-  },
-  render: function() {
+  }
+
+  render() {
     var players = this.state.players.map(function(player) {
       return (
         <PlayerListItem
@@ -56,6 +62,6 @@ var PlayerList = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default PlayerList

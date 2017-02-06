@@ -1,7 +1,7 @@
 import React from 'react';
 
-var AppHeader = React.createClass({
-  render: function() {
+class AppHeader extends React.Component {
+  render() {
     return (
       <nav className="navbar navbar-default">
         <div className="container-fluid">
@@ -15,6 +15,6 @@ var AppHeader = React.createClass({
       </nav>
     );
   }
-});
+}
 
 export default AppHeader

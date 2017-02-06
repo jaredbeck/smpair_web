@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 import PlayerList from './PlayerList';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div>
