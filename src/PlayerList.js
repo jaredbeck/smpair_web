@@ -1,6 +1,7 @@
 import React from 'react';
+import PlayerListItem from './PlayerListItem';
 
-var PlayersTable = React.createClass({
+var PlayerList = React.createClass({
   render: function() {
     return (
       <div className="container">
@@ -16,6 +17,9 @@ var PlayersTable = React.createClass({
               </tr>
               </thead>
               <tbody>
+                <PlayerListItem id="12011" name="Steve Colburn" rating="-5.2" />
+                <PlayerListItem id="12212" name="Jared Beck" rating="3.4" />
+                <PlayerListItem id="12443" name="Andrew Jackson" rating="4.5" />
               </tbody>
             </table>
             <a className="btn btn-default">
@@ -28,4 +32,4 @@ var PlayersTable = React.createClass({
   }
 });
 
-export default PlayersTable
+export default PlayerList

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
-import PlayersTable from './PlayersTable';
+import PlayerList from './PlayerList';
 
 // derp
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div>
         <AppHeader />
-        <PlayersTable />
+        <PlayerList />
         <AppFooter />
       </div>
     );
