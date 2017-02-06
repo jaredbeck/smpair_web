@@ -12,6 +12,10 @@ var PlayerList = React.createClass({
       ]
     };
   },
+  handleAddPlayer: function(player) {
+    const newPlayers = this.state.players.concat(player);
+    this.setState({players: newPlayers});
+  },
   render: function() {
     var players = this.state.players.map(function(player) {
       return (
@@ -46,7 +50,7 @@ var PlayerList = React.createClass({
             </table>
           </div>
           <div className="col-md-4">
-            <AddPlayerForm />
+            <AddPlayerForm onAddPlayer={this.handleAddPlayer} />
           </div>
         </div>
       </div>
