@@ -1,4 +1,7 @@
 .app-footer {
   bottom: 0;
   position: fixed;
+
+  /* Full width so we can center text. */
+  width: 100%;
 }

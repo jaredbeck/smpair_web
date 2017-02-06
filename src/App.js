@@ -4,7 +4,6 @@ import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 import PlayerList from './PlayerList';
 
-// derp
 class App extends Component {
   render() {
     return (
